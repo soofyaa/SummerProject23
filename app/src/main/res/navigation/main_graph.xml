@@ -109,5 +109,13 @@
         <action
             android:id="@+id/action_profileFragment_to_addFragment"
             app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_developmentFragment"
+            app:destination="@id/developmentFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/developmentFragment"
+        android:name="com.itis.summerproject23.DevelopmentFragment"
+        android:label="fragment_development"
+        tools:layout="@layout/fragment_development" />
 </navigation>
