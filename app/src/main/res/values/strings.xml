@@ -7,15 +7,5 @@
     <string name="add">Add</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
-    <string name="welcome">Hi!! It\'s my App</string>
-    <string name="security">Security</string>
-    <string name="payments">Payments</string>
-    <string name="back">Back</string>
-    <string name="main_notification">It\'s your daily notification!</string>
-    <string name="click_me">Click Me</string>
-    <string name="no_notifications">No Notifications</string>
-    <string name="nice">Nice!</string>
-    <string name="previous_fragment_class">previousFragmentClass</string>
-    <string name="text_name">Name</string>
 
 </resources>
