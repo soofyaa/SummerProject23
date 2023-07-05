@@ -18,5 +18,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<BottomNavigationView>(R.id.bnv_main).apply {
             setupWithNavController(controller)
         }
+
     }
 }
