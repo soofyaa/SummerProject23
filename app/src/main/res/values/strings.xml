@@ -16,4 +16,6 @@
     <string name="no_notifications">No Notifications</string>
     <string name="nice">Nice!</string>
     <string name="previous_fragment_class">previousFragmentClass</string>
+    <string name="text_name">Name</string>
+
 </resources>
