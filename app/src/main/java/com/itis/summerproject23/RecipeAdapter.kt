@@ -7,9 +7,9 @@ import com.bumptech.glide.RequestManager
 import com.itis.summerproject23.databinding.ItemRecipeBinding
 
 class RecipeAdapter(
+
     private var list: List<Recipe>,
     private val glide: RequestManager,
-
 
     ) : RecyclerView.Adapter<RecipeHolder>() {
 
@@ -38,5 +38,4 @@ class RecipeAdapter(
         list = newList
         notifyDataSetChanged()
     }
-
 }

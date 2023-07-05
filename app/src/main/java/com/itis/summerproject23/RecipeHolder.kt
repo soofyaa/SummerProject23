@@ -7,11 +7,10 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.itis.summerproject23.databinding.ItemRecipeBinding
 
-class RecipeHolder (
+class RecipeHolder(
 
     private val binding: ItemRecipeBinding,
     private val glide: RequestManager,
-
 
     ) : RecyclerView.ViewHolder(binding.root) {
     private val options: RequestOptions = RequestOptions()
@@ -20,7 +19,6 @@ class RecipeHolder (
     fun onBind(recipe: Recipe) {
         with(binding) {
             tvTitle.text = recipe.name
-
             Glide.with(binding.root)
                 .load(recipe.url)
                 .placeholder(R.drawable.baseline_food_bank_24)
