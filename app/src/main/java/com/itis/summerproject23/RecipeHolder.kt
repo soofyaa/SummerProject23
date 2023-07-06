@@ -11,14 +11,19 @@ class RecipeHolder(
 
     private val binding: ItemRecipeBinding,
     private val glide: RequestManager,
+    private val onItemClick: (Recipe) -> Unit
 
     ) : RecyclerView.ViewHolder(binding.root) {
+
     private val options: RequestOptions = RequestOptions()
         .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
 
     fun onBind(recipe: Recipe) {
         with(binding) {
             tvTitle.text = recipe.name
+            root.setOnClickListener {
+                onItemClick(recipe)
+            }
             Glide.with(binding.root)
                 .load(recipe.url)
                 .placeholder(R.drawable.baseline_food_bank_24)

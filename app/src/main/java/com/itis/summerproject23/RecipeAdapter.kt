@@ -10,6 +10,7 @@ class RecipeAdapter(
 
     private var list: List<Recipe>,
     private val glide: RequestManager,
+    private val onItemClick: (Recipe) -> Unit
 
     ) : RecyclerView.Adapter<RecipeHolder>() {
 
@@ -17,12 +18,14 @@ class RecipeAdapter(
         parent: ViewGroup,
         viewType: Int
     ): RecipeHolder = RecipeHolder(
+
         binding = ItemRecipeBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         ),
         glide = glide,
+        onItemClick = onItemClick
     )
 
     override fun onBindViewHolder(
