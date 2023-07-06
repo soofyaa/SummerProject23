@@ -19,25 +19,25 @@ class RecipePageFragment : Fragment(R.layout.fragment_recipe_page) {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentRecipePageBinding.bind(view)
-        adapter = RecipeAdapter(RecipeRepository.list, Glide.with(this)) {}
+        //adapter = RecipeAdapter(RecipeRepository.list, Glide.with(this)) {}
 
-        val recipe = RecipeRepository.getItemById(arguments?.getInt(ARG_ID))
+        //val recipe = RecipeRepository.getItemById(arguments?.getInt(ARG_ID))
 
 
-        binding?.run {
-            tvTitle.text = recipe?.name.toString()
-            tvIngredients.text = recipe?.ingredients.toString()
-            tvText.text = recipe?.text.toString()
-            Glide.with(root)
-                .load(recipe?.url)
-                .placeholder(R.drawable.loading)
-                .apply(options)
-                .error(R.drawable.image_not_available)
-                .into(ivImage)
-            btnBack.setOnClickListener {
-                findNavController().navigate(R.id.action_recipePageFragment_to_searchFragment)
-            }
-        }
+//        binding?.run {
+//            tvTitle.text = recipe?.name.toString()
+//            tvIngredients.text = recipe?.ingredients.toString()
+//            tvText.text = recipe?.text.toString()
+//            Glide.with(root)
+//                .load(recipe?.url)
+//                .placeholder(R.drawable.loading)
+//                .apply(options)
+//                .error(R.drawable.image_not_available)
+//                .into(ivImage)
+//            btnBack.setOnClickListener {
+//                findNavController().navigate(R.id.action_recipePageFragment_to_searchFragment)
+//            }
+//        }
     }
 
     override fun onDestroyView() {
