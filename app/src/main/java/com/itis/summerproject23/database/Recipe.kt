@@ -1,4 +1,4 @@
-package com.itis.summerproject23
+package com.itis.summerproject23.database
 
 data class Recipe(
     var id : Int,
