@@ -13,7 +13,7 @@ class RecipeHolder(
     private val glide: RequestManager,
     private val onItemClick: (Recipe) -> Unit
 
-    ) : RecyclerView.ViewHolder(binding.root) {
+) : RecyclerView.ViewHolder(binding.root) {
 
     private val options: RequestOptions = RequestOptions()
         .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
