@@ -1,5 +1,7 @@
 package com.itis.summerproject23
 
+import com.itis.summerproject23.database.Recipe
+
 object RecipeRepository {
     val list: List<Recipe> = listOf(
         Recipe(
