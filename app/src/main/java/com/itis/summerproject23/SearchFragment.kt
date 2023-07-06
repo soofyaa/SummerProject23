@@ -20,9 +20,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
     private lateinit var searchView: SearchView
     private lateinit var recyclerView: RecyclerView
-    private var _binding: FragmentSearchBinding? = null
-    private val binding get() = _binding!!
-    private var adapter: RecipeAdapter? = null
+    private lateinit var adapter: RecipeAdapter
     private val PREFS_NAME = "MyPrefs"
     private val PREF_FIRST_RUN = "isFirstRun"
 
@@ -62,7 +60,10 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                 Glide.with(this)
             ) { recipe ->
                 bundle.putInt("ID", recipe.id)
-                findNavController().navigate(R.id.action_searchFragment_to_recipePageFragment, bundle)
+                findNavController().navigate(
+                    R.id.action_searchFragment_to_recipePageFragment,
+                    bundle
+                )
             }
         }
 
@@ -90,7 +91,8 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                     }
                     if (filteredList.isEmpty()) {
 
-                        Toast.makeText(requireActivity(), "No Data Found..", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireActivity(), "No Data Found..", Toast.LENGTH_SHORT)
+                            .show()
                     } else {
 
                         adapter?.updateData(filteredList)
@@ -99,10 +101,5 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
             }
         })
         return view
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
