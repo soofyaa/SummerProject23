@@ -12,7 +12,7 @@ class RecipeAdapter(
     private val glide: RequestManager,
     private val onItemClick: (Recipe) -> Unit
 
-    ) : RecyclerView.Adapter<RecipeHolder>() {
+) : RecyclerView.Adapter<RecipeHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

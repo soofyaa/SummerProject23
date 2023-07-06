@@ -1,8 +1,9 @@
 package com.itis.summerproject23
 
 data class Recipe(
-    val id : Int,
-    val name : String,
-    val text : String,
-    val url: String
+    var id : Int,
+    var name : String,
+    var ingredients : String,
+    var text : String,
+    var url: String
 )
