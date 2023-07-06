@@ -14,10 +14,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile)  {
 
         binding?.run {
             btnSignUp.setOnClickListener {
-                findNavController().navigate(R.id.action_profileFragment_to_developmentFragment)
+//                findNavController().navigate(R.id.action_profileFragment_to_developmentFragment)
             }
             btnSingIn.setOnClickListener {
-                findNavController().navigate(R.id.action_profileFragment_to_developmentFragment)
+//                findNavController().navigate(R.id.action_profileFragment_to_developmentFragment)
             }
         }
     }

@@ -35,7 +35,7 @@ class RecipePageFragment : Fragment(R.layout.fragment_recipe_page) {
                 .error(R.drawable.image_not_available)
                 .into(ivImage)
             btnBack.setOnClickListener {
-                findNavController().navigate(R.id.action_recipePageFragment_to_mainFragment)
+                findNavController().navigate(R.id.action_recipePageFragment_to_searchFragment)
             }
         }
     }
