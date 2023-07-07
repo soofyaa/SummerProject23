@@ -8,7 +8,11 @@
     <string name="sign_in">Зарегистрироваться</string>
     <string name="sign_up">Войти</string>
     <string name="text_name">Еда</string>
+    <string name="step_id">Шаг %d:</string>
+    <string name="step_example">Шаг 1</string>
+    <string name="desc_example">Тщательно вымойте картошку и отварите ее в кожуре. За степенью готовностью необходимо следить, иначе картофель переварится и будет непригоден. Чтобы кожура не лопнула во время варки, можно проткнуть зубочисткой каждый корнеплод или добавить в кастрюлю с водой щепотку соли и каплю уксуса. Время варки — 20 минут. После снимите с огня, слейте кипяток, остудите и очистите от кожуры. А затем нарежьте на кубики.</string>
     <string name="ingredients">Ингредиенты</string>
+    <string name="hint_search">Найти рецепт…</string>
     <string name="recipe_is_saved">Рецепт успешно сохранен!</string>
     <string name="recipe_added_to_favorite">Рецепт добавлен в избранное!</string>
     <string name="recipe_removed_from_favorite">Рецепт удален из избранного!</string>
