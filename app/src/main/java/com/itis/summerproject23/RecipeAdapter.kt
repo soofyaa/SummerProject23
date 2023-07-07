@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
+import com.itis.summerproject23.database.Recipe
 import com.itis.summerproject23.databinding.ItemRecipeBinding
 
 class RecipeAdapter(

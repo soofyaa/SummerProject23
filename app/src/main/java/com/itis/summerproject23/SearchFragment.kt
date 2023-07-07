@@ -11,6 +11,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.itis.summerproject23.database.Recipe
 
 class SearchFragment : Fragment(R.layout.fragment_search) {
 

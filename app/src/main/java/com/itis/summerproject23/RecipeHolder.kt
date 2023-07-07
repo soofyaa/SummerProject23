@@ -5,6 +5,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.itis.summerproject23.database.Recipe
 import com.itis.summerproject23.databinding.ItemRecipeBinding
 
 class RecipeHolder(
