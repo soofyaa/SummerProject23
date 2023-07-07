@@ -11,7 +11,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.snackbar.Snackbar
-import com.itis.summerproject23.database.FavoriteRecipe
 import com.itis.summerproject23.database.Recipe
 import com.itis.summerproject23.database.RecipeDatabase
 import com.itis.summerproject23.databinding.FragmentRecipePageBinding
