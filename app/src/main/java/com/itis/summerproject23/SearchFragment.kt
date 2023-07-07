@@ -38,7 +38,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         recyclerView = view.findViewById(R.id.rv_recipe)
 
         val recipesDatabase = context?.let {
-            Room.databaseBuilder(it, RecipeDatabase::class.java, "recipes")
+            Room.databaseBuilder(it, RecipeDatabase::class.java, "database-recipes")
                 .allowMainThreadQueries()
                 .build()
         }
