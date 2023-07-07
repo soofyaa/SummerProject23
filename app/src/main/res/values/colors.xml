@@ -3,8 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="divider">#444444</color>
-    <color name="seed">#659852</color>
-    <color name="md_theme_light_primary">#659852</color>
+    <color name="seed">#136D34</color>
+    <color name="md_theme_light_primary">#126D34</color>
     <color name="md_theme_light_primary_dark">#FFFFFF</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
     <color name="md_theme_light_primaryContainer">#F4F4F4</color>

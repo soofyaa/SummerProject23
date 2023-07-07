@@ -34,6 +34,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         val isFirstRun = sharedPrefs.getBoolean(PREF_FIRST_RUN, true)
 
         val view = inflater.inflate(R.layout.fragment_search, container, false)
+
         searchView = view.findViewById(R.id.sv_recipe)
         recyclerView = view.findViewById(R.id.rv_recipe)
 
