@@ -10,5 +10,6 @@ data class Recipe(
     var name : String,
     var ingredients : String,
     var text : String,
-    var url: String
+    var url: String,
+    var isFavorite: Int
 )

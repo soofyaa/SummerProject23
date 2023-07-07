@@ -3,12 +3,15 @@ package com.itis.summerproject23
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.material.snackbar.Snackbar
+import com.itis.summerproject23.database.FavoriteRecipe
 import com.itis.summerproject23.database.Recipe
 import com.itis.summerproject23.database.RecipeDatabase
 import com.itis.summerproject23.databinding.FragmentRecipePageBinding
@@ -16,7 +19,6 @@ import com.itis.summerproject23.databinding.FragmentRecipePageBinding
 class RecipePageFragment : Fragment(R.layout.fragment_recipe_page) {
 
     private var binding: FragmentRecipePageBinding? = null
-    private var adapter: RecipeAdapter? = null
     private val options: RequestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
     private val PREFS_NAME = "MyPrefs"
     private val PREF_FIRST_RUN = "isFirstRun"
@@ -59,6 +61,26 @@ class RecipePageFragment : Fragment(R.layout.fragment_recipe_page) {
 
             btnBack.setOnClickListener {
                 findNavController().navigate(R.id.action_recipePageFragment_to_searchFragment)
+            }
+
+            swAddToFavorite.isChecked = recipe?.isFavorite != 0
+
+            swAddToFavorite.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
+                    recipe?.isFavorite = 1
+                    if (recipe != null) recipesDatabase?.recipeDao()?.updateRecipe(recipe)
+                    Snackbar.make(view, getString(R.string.recipe_added_to_favorite), Snackbar.LENGTH_LONG)
+                        .apply { setAnchorView(R.id.bnv_main) }.show()
+                } else {
+                    recipe?.isFavorite = 0
+                    if (recipe != null) recipesDatabase?.recipeDao()?.updateRecipe(recipe)
+                    Snackbar.make(view, getString(R.string.recipe_removed_from_favorite), Snackbar.LENGTH_LONG)
+                        .apply { setAnchorView(R.id.bnv_main) }.show()
+                }
+
+                val imm = requireContext()
+                    .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(swAddToFavorite.windowToken, 0)
             }
         }
     }
