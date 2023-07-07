@@ -17,7 +17,6 @@
     <string name="recipe_added_to_favorite">Рецепт добавлен в избранное!</string>
     <string name="recipe_removed_from_favorite">Рецепт удален из избранного!</string>
     <string name="nothing_found">Ничего не найдено</string>
-    <string name="hint_search">Найти рецепт</string>
     <string name="recipe_deleted">Рецепт удалён</string>
     <string name="no_text">No text</string>
     <string name="recipe_not_found">Ничего не найдено</string>
