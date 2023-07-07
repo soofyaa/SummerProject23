@@ -2,6 +2,7 @@ package com.itis.summerproject23
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -17,6 +18,15 @@ class MainActivity : AppCompatActivity() {
                 .navController
         findViewById<BottomNavigationView>(R.id.bnv_main).apply {
             setupWithNavController(controller)
+        }
+        val bottomNav: BottomNavigationView = findViewById(R.id.bnv_main)
+
+        controller.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.profileFragment || destination.id == R.id.registrationFragment) {
+                bottomNav.visibility = View.GONE
+            } else {
+                bottomNav.visibility = View.VISIBLE
+            }
         }
     }
 }

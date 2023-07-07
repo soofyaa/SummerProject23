@@ -4,9 +4,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+
 import com.itis.summerproject23.databinding.FragmentProfileBinding
 
-class ProfileFragment : Fragment(R.layout.fragment_profile)  {
+class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private var binding: FragmentProfileBinding? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -14,15 +15,16 @@ class ProfileFragment : Fragment(R.layout.fragment_profile)  {
 
         binding?.run {
             btnSignUp.setOnClickListener {
-//                findNavController().navigate(R.id.action_profileFragment_to_developmentFragment)
+                findNavController().navigate(R.id.action_profileFragment_to_registrationFragment)
             }
-            btnSingIn.setOnClickListener {
-//                findNavController().navigate(R.id.action_profileFragment_to_developmentFragment)
-            }
+
         }
+
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
     }
 }
+

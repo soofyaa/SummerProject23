@@ -6,7 +6,7 @@
     <string name="search">Search</string>
     <string name="add">Add</string>
     <string name="sign_in">Sign In</string>
-    <string name="sign_up">Sign Up</string>
+    <string name="registration">Registration</string>
     <string name="text_name">Еда</string>
     <string name="step_id">Шаг %d:</string>
     <string name="step_example">Шаг 1</string>
