@@ -30,7 +30,9 @@
         android:name="com.itis.summerproject23.SearchFragment"
         android:label="SearchFragment" >
         <action
+
             android:id="@+id/action_searchFragment_to_recipePageFragment"
+
             app:destination="@id/recipePageFragment" />
     </fragment>
     <fragment
