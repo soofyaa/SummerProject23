@@ -6,6 +6,7 @@ import android.view.View
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.itis.summerproject23.database.UsersDatabase
 
 class MainActivity : AppCompatActivity() {
 
