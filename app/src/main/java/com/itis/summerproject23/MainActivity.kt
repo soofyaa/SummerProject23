@@ -23,7 +23,10 @@ class MainActivity : AppCompatActivity() {
         val bottomNav: BottomNavigationView = findViewById(R.id.bnv_main)
 
         controller.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.profileFragment || destination.id == R.id.registrationFragment) {
+            if (destination.id == R.id.profileFragment || destination.id == R.id.registrationFragment
+                || destination.id == R.id.chooseFragment || destination.id == R.id.entryFragment
+                || destination.id == R.id.recipePageFragment
+            ) {
                 bottomNav.visibility = View.GONE
             } else {
                 bottomNav.visibility = View.VISIBLE

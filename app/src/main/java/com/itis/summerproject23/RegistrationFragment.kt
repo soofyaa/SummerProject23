@@ -24,7 +24,6 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
         _binding = FragmentRegistrationBinding.bind(view)
         binding.btnRegister.setOnClickListener {
             with(binding) {
-                val preferenceHelper = PreferenceHelper(requireContext())
                 val userName = etUsername.text.toString()
                 val password = etPassword.text.toString()
                 val email = etEmail.text.toString()
@@ -33,16 +32,23 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                     Snackbar.make(view, getString(R.string.need_all_data), Snackbar.LENGTH_LONG)
                         .show()
                 } else {
+                    val preferenceHelper = PreferenceHelper(requireContext())
+                    preferenceHelper.setIsLoggedIn(true)
+                    preferenceHelper.setUserName(userName)
 
-                    preferenceHelper.saveUserName(userName)                    
+
                     Snackbar.make(view, getString(R.string.user_saved), Snackbar.LENGTH_LONG)
                         .apply { setAnchorView(R.id.bnv_main) }.show()
-                    val sharedPreferences = requireActivity().getSharedPreferences("my_app", Context.MODE_PRIVATE)
+
+
+                    val sharedPreferences =
+                        requireActivity().getSharedPreferences("my_app", Context.MODE_PRIVATE)
                     val editor = sharedPreferences.edit()
                     editor.putBoolean("is_registered", true)
                     editor.apply()
-                    findNavController().navigate(R.id.action_registrationFragment_to_userAcoountFragment)
+
                     addToBase(userName, password, email)
+                    findNavController().navigate(R.id.action_registrationFragment_to_userAccountFragment)
                 }
             }
         }
@@ -65,13 +71,12 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
             email = emailGet
         )
         context?.let {
-            Room.databaseBuilder(it, UsersDatabase::class.java, "database-name")
+            Room.databaseBuilder(it, UsersDatabase::class.java, "database-users")
                 .allowMainThreadQueries()
                 .build()
                 .userDao()
         }?.insertUser(newUser)
     }
-
 }
 
 

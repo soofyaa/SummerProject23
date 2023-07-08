@@ -10,24 +10,28 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
-            android:id="@+id/action_profileFragment_to_registrationFragment"
-            app:destination="@id/registrationFragment" />
+            android:id="@+id/action_profileFragment_to_userAccountFragment"
+            app:destination="@id/userAccountFragment" />
         <action
-            android:id="@+id/action_profileFragment_to_userAcoountFragment"
-            app:destination="@id/userAcoountFragment" />
+            android:id="@+id/action_profileFragment_to_chooseFragment"
+            app:destination="@id/chooseFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.itis.summerproject23.RegistrationFragment"
         android:label="RegistrationFragment" >
         <action
-            android:id="@+id/action_registrationFragment_to_userAcoountFragment"
-            app:destination="@id/userAcoountFragment" />
+            android:id="@+id/action_registrationFragment_to_userAccountFragment"
+            app:destination="@id/userAccountFragment" />
     </fragment>
     <fragment
-        android:id="@+id/userAcoountFragment"
-        android:name="com.itis.summerproject23.UserAcoountFragment"
-        android:label="UserAcoountFragment" />
+        android:id="@+id/userAccountFragment"
+        android:name="com.itis.summerproject23.UserAccountFragment"
+        android:label="UserAccountFragment">
+        <action
+            android:id="@+id/action_userAccountFragment_to_chooseFragment"
+            app:destination="@id/chooseFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.itis.summerproject23.SearchFragment"
@@ -60,5 +64,24 @@
         <action
             android:id="@+id/action_recipePageFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseFragment"
+        android:name="com.itis.summerproject23.ChooseFragment"
+        android:label="ChooseFragment" >
+        <action
+            android:id="@+id/action_chooseFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_chooseFragment_to_entryFragment"
+            app:destination="@id/entryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entryFragment"
+        android:name="com.itis.summerproject23.EntryFragment"
+        android:label="EntryFragment" >
+        <action
+            android:id="@+id/action_entryFragment_to_userAccountFragment"
+            app:destination="@id/userAccountFragment" />
     </fragment>
 </navigation>

@@ -20,7 +20,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentAddBinding.bind(view)
 
-        binding.btmAdd.setOnClickListener {
+        binding.btnAdd.setOnClickListener {
             with(binding) {
                 addToBase(
                     etName.text.toString(),
@@ -32,7 +32,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
 
             val imm =
                 requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(binding.btmAdd.windowToken, 0)
+            imm.hideSoftInputFromWindow(binding.btnAdd.windowToken, 0)
 
             Snackbar.make(view, getString(R.string.recipe_is_saved), Snackbar.LENGTH_LONG)
                 .apply { setAnchorView(R.id.bnv_main) }.show()
