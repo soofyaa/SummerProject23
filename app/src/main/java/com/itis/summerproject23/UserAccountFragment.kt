@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
-class UserAcoountFragment : Fragment(R.layout.fragment_user_account) {
+class UserAccountFragment : Fragment(R.layout.fragment_user_account) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -16,7 +16,7 @@ class UserAcoountFragment : Fragment(R.layout.fragment_user_account) {
         val savedUserName = preferenceHelper.getUserName()
 
         val greetingText = "Привет, $savedUserName!"
-        val welcomeUserTextView = view.findViewById<TextView>(R.id.tw_welcomeUser)
+        val welcomeUserTextView = view.findViewById<TextView>(R.id.tv_welcome_user)
         welcomeUserTextView.text = greetingText
 
         val isLoggedIn = preferenceHelper.getIsLoggedIn()

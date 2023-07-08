@@ -5,11 +5,11 @@
     <string name="favorite">Избранное</string>
     <string name="search">Поиск</string>
     <string name="add">Добавить</string>
-    <string name="sign_in">Зарегистрироваться</string>
-    <string name="sign_up">Войти</string>
+    <string name="sign_in">Вход</string>
+    <string name="sign_up">Регистрация</string>
     <string name="text_name">Еда</string>
     <string name="ingredients">Ингредиенты</string>
-    <string name="hint_search">Найти рецепт…</string>
+    <string name="hint_search">Найти рецепт</string>
     <string name="recipe_is_saved">Рецепт успешно сохранен!</string>
     <string name="recipe_added_to_favorite">Рецепт добавлен в избранное!</string>
     <string name="recipe_removed_from_favorite">Рецепт удален из избранного!</string>
@@ -25,8 +25,10 @@
     <string name="name">Название</string>
     <string name="description">Описание</string>
     <string name="url_photo">Ссылка на фото</string>
-    <string name="register">Регистрация</string>
     <string name="done">Вход выполнен</string>
     <string name="no_user">Пользователь не найден</string>
+    <string name="undo">Отмена</string>
+    <string name="start">Начать</string>
+    <string name="welcome_user">Привет, Пользователь!</string>
 
 </resources>
