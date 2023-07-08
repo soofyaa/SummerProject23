@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/userAcoountFragment"
-        android:name="com.itis.summerproject23.UserAcoountFragment"
+        android:name="com.itis.summerproject23.UserAccountFragment"
         android:label="UserAcoountFragment" />
     <fragment
         android:id="@+id/searchFragment"

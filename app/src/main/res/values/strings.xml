@@ -29,5 +29,6 @@
     <string name="description">Описание</string>
     <string name="url_photo">Ссылка на фото</string>
     <string name="register">Регистрация</string>
+    <string name="undo">Отмена</string>
 
 </resources>

@@ -64,8 +64,17 @@ class RecipePageFragment : Fragment(R.layout.fragment_recipe_page) {
             }
 
             btnDelete.setOnClickListener {
-                if (recipe != null) recipesDatabase?.recipeDao()?.deleteRecipe(recipe)
-                Snackbar.make(view, getString(R.string.recipe_deleted), Snackbar.LENGTH_LONG).show()
+                if (recipe != null) {
+                    recipeDao?.deleteRecipe(recipe)
+                    findNavController().navigate(R.id.action_recipePageFragment_to_searchFragment)
+                    Snackbar.make(view, getString(R.string.recipe_deleted), Snackbar.LENGTH_LONG)
+                        .apply { setAnchorView(R.id.bnv_main) }
+                        .setAction(getString(R.string.undo)) {
+                            recipeDao?.insertRecipe(recipe)
+                            findNavController().popBackStack()
+                        }
+                        .show()
+                }
             }
 
             cbAddToFavorite.isChecked = !(recipe == null || recipe.isFavorite == 0)
@@ -86,7 +95,8 @@ class RecipePageFragment : Fragment(R.layout.fragment_recipe_page) {
                 }
 
                 val imm =
-                    requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                    requireContext().getSystemService(Context.INPUT_METHOD_SERVICE)
+                            as InputMethodManager
                 imm.hideSoftInputFromWindow(cbAddToFavorite.windowToken, 0)
             }
         }
