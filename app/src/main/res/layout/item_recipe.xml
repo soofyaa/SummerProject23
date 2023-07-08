@@ -23,7 +23,6 @@
             android:scaleType="centerCrop"
             android:background="@drawable/bg_rounded_shape"
             android:clipToOutline="true"
-            android:elevation="2dp"
             app:layout_constraintBottom_toTopOf="@id/tv_title"
             app:layout_constraintDimensionRatio="16:11"
             app:layout_constraintEnd_toEndOf="parent"

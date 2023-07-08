@@ -25,7 +25,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
                 val name = etName.text.toString()
                 val text = etText.text.toString()
                 val ingredients = etIngredients.text.toString()
-                val url = etURL.text.toString()
+                val url = etUrl.text.toString()
 
                 if (name.isNotEmpty() && text.isNotEmpty() && ingredients.isNotEmpty() && url.isNotEmpty()) {
                     addToBase(name, text, ingredients, url)
