@@ -34,7 +34,7 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                         .show()
                 } else {
 
-                    preferenceHelper.saveUserName(userName)                    
+                    preferenceHelper.saveUserName(userName)
                     Snackbar.make(view, getString(R.string.user_saved), Snackbar.LENGTH_LONG)
                         .apply { setAnchorView(R.id.bnv_main) }.show()
                     val sharedPreferences = requireActivity().getSharedPreferences("my_app", Context.MODE_PRIVATE)
@@ -73,5 +73,4 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
     }
 
 }
-
 

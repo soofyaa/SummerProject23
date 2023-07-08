@@ -29,8 +29,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-    companion object {
-        lateinit var database: UsersDatabase
-    }
 }

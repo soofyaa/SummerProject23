@@ -6,26 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".ProfileFragment">
 
-    <Button
-        android:id="@+id/btn_sing_in"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="312dp" />
 
     <Button
         android:id="@+id/btn_sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
         android:text="Button"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="424dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_account" />
 
     <ImageView
         android:id="@+id/iv_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_account_circle_24" />
+        android:layout_width="292dp"
+        android:layout_height="292dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/baseline_account_circle_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
