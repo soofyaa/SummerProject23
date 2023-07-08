@@ -5,7 +5,7 @@
     <string name="favorite">Favorite</string>
     <string name="search">Search</string>
     <string name="add">Добавить</string>
-    <string name="sign_in">Sign In</string>
+    <string name="sign_in">Вход</string>
     <string name="registration">Registration</string>
     <string name="text_name">Еда</string>
     <string name="step_id">Шаг %d:</string>
@@ -25,5 +25,7 @@
     <string name="description">Описание</string>
     <string name="url_photo">Ссылка на фото</string>
     <string name="register">Регистрация</string>
+    <string name="done">Вход выполнен</string>
+    <string name="no_user">Пользователь не найден</string>
 
 </resources>

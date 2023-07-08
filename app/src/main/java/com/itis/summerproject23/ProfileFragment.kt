@@ -14,18 +14,18 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         val sharedPreferences =
             requireActivity().getSharedPreferences("my_app", Context.MODE_PRIVATE)
         val isRegistered = sharedPreferences.getBoolean("is_registered", false)
+
         binding = FragmentProfileBinding.bind(view)
         binding?.run {
-            btnSignUp.setOnClickListener {
+            btnWelcome.setOnClickListener {
 
                 if (isRegistered) {
-                    findNavController().navigate(R.id.action_profileFragment_to_userAcoountFragment)
+                    findNavController().navigate(R.id.action_profileFragment_to_userAccountFragment)
                 } else {
-                    findNavController().navigate(R.id.action_profileFragment_to_registrationFragment)
+                    findNavController().navigate(R.id.action_profileFragment_to_chooseFragment)
                 }
             }
         }

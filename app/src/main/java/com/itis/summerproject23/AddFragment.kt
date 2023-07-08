@@ -20,7 +20,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         super.onViewCreated(view, savedInstanceState)
 
         _binding = FragmentAddBinding.bind(view)
-        binding.btmAdd.setOnClickListener {
+        binding.btnAdd.setOnClickListener {
             with(binding) {
                 val name = etName.text.toString()
                 val text = etText.text.toString()
@@ -29,18 +29,17 @@ class AddFragment : Fragment(R.layout.fragment_add) {
 
                 if (name.isNotEmpty() && text.isNotEmpty() && ingredients.isNotEmpty() && url.isNotEmpty()) {
                     addToBase(name, text, ingredients, url)
-
                     val imm =
-                        requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                    imm.hideSoftInputFromWindow(binding.btmAdd.windowToken, 0)
-
+                requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(binding.btnAdd.windowToken, 0)
+            
                     Snackbar.make(view, getString(R.string.recipe_is_saved), Snackbar.LENGTH_LONG)
                         .apply { setAnchorView(R.id.bnv_main) }.show()
 
                 } else {
                     val imm =
                         requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                    imm.hideSoftInputFromWindow(binding.btmAdd.windowToken, 0)
+                    imm.hideSoftInputFromWindow(binding.btnAdd.windowToken, 0)
                     Snackbar.make(view, getString(R.string.need_all_data), Snackbar.LENGTH_LONG)
                         .apply { setAnchorView(R.id.bnv_main) }.show()
                 }
