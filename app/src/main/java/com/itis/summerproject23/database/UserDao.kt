@@ -13,7 +13,7 @@ interface UserDao {
     fun getUserById(inputId: Int): User
 
     @Insert
-    fun insertUser(recipe: User)
+    fun insertUser(user: User)
 
 
 }
