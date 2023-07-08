@@ -23,8 +23,10 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         binding.btmAdd.setOnClickListener {
             with(binding) {
                 addToBase(
-                    etName.text.toString(), etText.text.toString(),
-                    etIngredients.text.toString(), etURL.text.toString()
+                    etName.text.toString(),
+                    etText.text.toString(),
+                    etIngredients.text.toString(),
+                    etURL.text.toString(),
                 )
             }
 
@@ -32,34 +34,29 @@ class AddFragment : Fragment(R.layout.fragment_add) {
                 requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(binding.btmAdd.windowToken, 0)
 
-            Snackbar.make(view, "Рецепт успешно сохранен!", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, getString(R.string.recipe_is_saved), Snackbar.LENGTH_LONG)
                 .apply { setAnchorView(R.id.bnv_main) }.show()
         }
     }
 
     private fun addToBase(
-
         nameGet: String,
         textGet: String,
         ingredientsGet: String,
-        urlGet: String
-
+        urlGet: String,
     ) {
         val newRecipes = Recipe(
-
             name = nameGet,
             text = textGet,
             ingredients = ingredientsGet,
-            url = urlGet
-
+            url = urlGet,
+            isFavorite = 0
         )
         context?.let {
-
             Room.databaseBuilder(it, RecipeDatabase::class.java, "database-recipes")
                 .allowMainThreadQueries()
                 .build()
                 .recipeDao()
-
         }?.insertRecipe(newRecipes)
     }
 }

@@ -8,17 +8,17 @@ import androidx.navigation.fragment.findNavController
 import com.itis.summerproject23.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
+
     private var binding: FragmentProfileBinding? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         val sharedPreferences =
             requireActivity().getSharedPreferences("my_app", Context.MODE_PRIVATE)
         val isRegistered = sharedPreferences.getBoolean("is_registered", false)
-
         binding = FragmentProfileBinding.bind(view)
-
         binding?.run {
             btnSignUp.setOnClickListener {
 

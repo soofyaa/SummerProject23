@@ -16,18 +16,12 @@ interface RecipeDao {
     @Delete
     fun deleteRecipe(recipe: Recipe)
 
-    @Query("SELECT * FROM favorites")
-    fun getAllFavorite(): List<FavoriteRecipe>
-
-    @Insert
-    fun insertFavorite(favourite: FavoriteRecipe)
-
-    @Delete
-    fun deleteFavorite(favourite: FavoriteRecipe)
+    @Query("SELECT * FROM recipes WHERE isFavorite = 1")
+    fun getAllFavorite(): List<Recipe>
 
     @Query("SELECT * FROM recipes WHERE id LIKE :inputId")
     fun getRecipeById(inputId: Int): Recipe
 
-    @Query("SELECT * FROM favorites WHERE id LIKE :inputId")
-    fun getFavoriteByID(inputId: Int): FavoriteRecipe
+    @Query("SELECT * FROM recipes WHERE isFavorite = 1 AND id LIKE :inputId")
+    fun getFavoriteById(inputId: Int): Recipe
 }

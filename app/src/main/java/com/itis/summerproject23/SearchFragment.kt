@@ -13,9 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.bumptech.glide.Glide
 import com.itis.summerproject23.database.Recipe
-
 import com.itis.summerproject23.database.RecipeDatabase
-import com.itis.summerproject23.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment(R.layout.fragment_search) {
 
@@ -33,8 +31,8 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
         val sharedPrefs = requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val isFirstRun = sharedPrefs.getBoolean(PREF_FIRST_RUN, true)
-
         val view = inflater.inflate(R.layout.fragment_search, container, false)
+
         searchView = view.findViewById(R.id.sv_recipe)
         recyclerView = view.findViewById(R.id.rv_recipe)
 
@@ -92,11 +90,15 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                     }
                     if (filteredList.isEmpty()) {
 
-                        Toast.makeText(requireActivity(), "No Data Found..", Toast.LENGTH_SHORT)
+                        Toast.makeText(
+                            requireActivity(),
+                            getString(R.string.recipe_not_found),
+                            Toast.LENGTH_SHORT
+                        )
                             .show()
                     } else {
 
-                        adapter?.updateData(filteredList)
+                        adapter.updateData(filteredList)
                     }
                 }
             }
