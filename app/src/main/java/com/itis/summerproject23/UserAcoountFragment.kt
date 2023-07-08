@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
-class UserAccountFragment : Fragment(R.layout.fragment_user_account) {
+class UserAcoountFragment : Fragment(R.layout.fragment_user_account) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
