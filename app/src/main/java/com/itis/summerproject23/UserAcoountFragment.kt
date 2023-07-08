@@ -18,4 +18,5 @@ class UserAcoountFragment : Fragment(R.layout.fragment_user_account) {
         val welcomeUserTextView = view.findViewById<TextView>(R.id.tw_welcomeUser)
         welcomeUserTextView.text = greetingText
     }
+
 }

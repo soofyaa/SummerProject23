@@ -5,23 +5,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import androidx.room.Room
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.itis.summerproject23.database.UsersDatabase
 
 class MainActivity : AppCompatActivity() {
-    companion object {
-        lateinit var database: UsersDatabase
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        database = Room.databaseBuilder(
-            applicationContext,
-            UsersDatabase::class.java,
-            "my-database"
-        ).build()
 
         val controller =
             (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment)

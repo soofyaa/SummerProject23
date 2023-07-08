@@ -5,15 +5,12 @@ import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.google.android.material.snackbar.Snackbar
 import com.itis.summerproject23.database.User
 import com.itis.summerproject23.database.UsersDatabase
-
 import com.itis.summerproject23.databinding.FragmentRegistrationBinding
-import kotlinx.coroutines.launch
 
 
 class RegistrationFragment : Fragment(R.layout.fragment_registration) {
@@ -35,9 +32,13 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                     Snackbar.make(view, "Введите все данные!", Snackbar.LENGTH_LONG)
                         .show()
                 } else {
-                    //preferenceHelper.saveUserName(userName)
+                    preferenceHelper.saveUserName(userName)
                     Snackbar.make(view, "Пользователь сохранен!", Snackbar.LENGTH_LONG)
                         .apply { setAnchorView(R.id.bnv_main) }.show()
+                    val sharedPreferences = requireActivity().getSharedPreferences("my_app", Context.MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putBoolean("is_registered", true)
+                    editor.apply()
                     findNavController().navigate(R.id.action_registrationFragment_to_userAcoountFragment)
                     addToBase(userName, password, email)
                 }
