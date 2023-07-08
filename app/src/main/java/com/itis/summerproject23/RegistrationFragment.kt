@@ -33,9 +33,14 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                     Snackbar.make(view, getString(R.string.need_all_data), Snackbar.LENGTH_LONG)
                         .show()
                 } else {
-                    //preferenceHelper.saveUserName(userName)
+
+                    preferenceHelper.saveUserName(userName)                    
                     Snackbar.make(view, getString(R.string.user_saved), Snackbar.LENGTH_LONG)
                         .apply { setAnchorView(R.id.bnv_main) }.show()
+                    val sharedPreferences = requireActivity().getSharedPreferences("my_app", Context.MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putBoolean("is_registered", true)
+                    editor.apply()
                     findNavController().navigate(R.id.action_registrationFragment_to_userAcoountFragment)
                     addToBase(userName, password, email)
                 }
