@@ -2,7 +2,7 @@ package com.itis.summerproject23
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -16,7 +16,7 @@ class UserAccountFragment : Fragment(R.layout.fragment_user_account) {
         val savedUserName = preferenceHelper.getUserName()
 
         val greetingText = "Привет, $savedUserName!"
-        val welcomeUserTextView = view.findViewById<TextView>(R.id.tw_welcomeUser)
+        val welcomeUserTextView = view.findViewById<TextView>(R.id.tv_welcome_user)
         welcomeUserTextView.text = greetingText
 
         val isLoggedIn = preferenceHelper.getIsLoggedIn()
@@ -24,7 +24,7 @@ class UserAccountFragment : Fragment(R.layout.fragment_user_account) {
             findNavController().navigate(R.id.action_userAccountFragment_to_chooseFragment)
         }
 
-        val logoutButton = view.findViewById<Button>(R.id.btn_exit)
+        val logoutButton = view.findViewById<ImageButton>(R.id.btn_exit)
         logoutButton.setOnClickListener {
             preferenceHelper.clearUserData()
             findNavController().navigate(R.id.action_userAccountFragment_to_chooseFragment)

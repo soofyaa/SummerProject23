@@ -25,11 +25,10 @@ class RecipeHolder(
             root.setOnClickListener {
                 onItemClick(recipe)
             }
-            Glide.with(binding.root)
-                .load(recipe.url)
-                .placeholder(R.drawable.loading)
+            glide.load(recipe.url)
                 .apply(options)
-                .error(R.drawable.image_not_available)
+                .placeholder(R.drawable.loading)
+                .error(R.drawable.baseline_error_24)
                 .into(ivCover)
         }
     }

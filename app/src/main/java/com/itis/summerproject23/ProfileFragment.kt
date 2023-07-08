@@ -28,7 +28,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                     findNavController().navigate(R.id.action_profileFragment_to_chooseFragment)
                 }
             }
+
         }
+
+
     }
 
     override fun onDestroyView() {
