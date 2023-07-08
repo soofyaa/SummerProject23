@@ -3,8 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="divider">#444444</color>
-    <color name="seed">#136D34</color>
-    <color name="md_theme_light_primary">#126D34</color>
+    <color name="seed">#F9744B</color>
+    <color name="md_theme_light_primary">#F9744B</color>
     <color name="md_theme_light_primary_dark">#FFFFFF</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
     <color name="md_theme_light_primaryContainer">#F4F4F4</color>
@@ -69,4 +69,5 @@
     <color name="md_theme_dark_surfaceTint">#85D993</color>
     <color name="md_theme_dark_outlineVariant">#424940</color>
     <color name="md_theme_dark_scrim">#000000</color>
+    <color name="md_light_theme_gradientSecond">#F4B75D</color>
 </resources>
