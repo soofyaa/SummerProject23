@@ -10,9 +10,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.itis.summerproject23.database.UsersDatabase
 
 class MainActivity : AppCompatActivity() {
-    companion object {
-        lateinit var database: UsersDatabase
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,5 +35,9 @@ class MainActivity : AppCompatActivity() {
                 bottomNav.visibility = View.VISIBLE
             }
         }
+    }
+
+    companion object {
+        lateinit var database: UsersDatabase
     }
 }

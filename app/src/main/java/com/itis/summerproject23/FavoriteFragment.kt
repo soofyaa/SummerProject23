@@ -31,11 +31,14 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
         val bundle = Bundle()
 
         if (recipesDatabase != null) {
-            adapter = RecipeAdapter(recipesDatabase.getAllFavorite(),
-                Glide.with(this)) { recipe ->
+            adapter = RecipeAdapter(
+                recipesDatabase.getAllFavorite(),
+                Glide.with(this)
+            ) { recipe ->
                 bundle.putInt("ID", recipe.id)
                 findNavController().navigate(
-                    R.id.action_favoriteFragment_to_recipePageFragment, bundle)
+                    R.id.action_favoriteFragment_to_recipePageFragment, bundle
+                )
             }
         }
         binding.rvFavorite.adapter = adapter

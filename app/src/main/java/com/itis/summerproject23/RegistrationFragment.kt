@@ -5,15 +5,12 @@ import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.google.android.material.snackbar.Snackbar
 import com.itis.summerproject23.database.User
 import com.itis.summerproject23.database.UsersDatabase
-
 import com.itis.summerproject23.databinding.FragmentRegistrationBinding
-import kotlinx.coroutines.launch
 
 
 class RegistrationFragment : Fragment(R.layout.fragment_registration) {
@@ -23,6 +20,7 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         _binding = FragmentRegistrationBinding.bind(view)
         binding.btnRegister.setOnClickListener {
             with(binding) {
@@ -32,11 +30,11 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                 val email = etEmail.text.toString()
                 if (userName.isEmpty() || password.isEmpty() || email.isEmpty()) {
                     hideKeyboard()
-                    Snackbar.make(view, "Введите все данные!", Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, getString(R.string.need_all_data), Snackbar.LENGTH_LONG)
                         .show()
                 } else {
                     //preferenceHelper.saveUserName(userName)
-                    Snackbar.make(view, "Пользователь сохранен!", Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, getString(R.string.user_saved), Snackbar.LENGTH_LONG)
                         .apply { setAnchorView(R.id.bnv_main) }.show()
                     findNavController().navigate(R.id.action_registrationFragment_to_userAcoountFragment)
                     addToBase(userName, password, email)
@@ -46,7 +44,8 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
     }
 
     private fun hideKeyboard() {
-        val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val imm =
+            requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view?.windowToken, 0)
     }
 

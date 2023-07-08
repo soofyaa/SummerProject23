@@ -36,15 +36,13 @@
         android:id="@+id/iv_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/empty_img"
-        tools:ignore="MissingConstraints" />
+        android:src="@drawable/empty_img" />
 
     <Button
         android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:ignore="MissingConstraints" />
+        android:text="Button" />
 
     <Switch
         android:id="@+id/sw_add_to_favorite"

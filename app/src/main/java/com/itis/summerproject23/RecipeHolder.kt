@@ -27,8 +27,9 @@ class RecipeHolder(
             }
             Glide.with(binding.root)
                 .load(recipe.url)
-                .placeholder(R.drawable.baseline_food_bank_24)
-                .error(R.drawable.baseline_error_24)
+                .placeholder(R.drawable.loading)
+                .apply(options)
+                .error(R.drawable.image_not_available)
                 .into(ivCover)
         }
     }
