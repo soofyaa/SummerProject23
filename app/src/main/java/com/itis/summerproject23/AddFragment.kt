@@ -29,17 +29,11 @@ class AddFragment : Fragment(R.layout.fragment_add) {
 
                 if (name.isNotEmpty() && text.isNotEmpty() && ingredients.isNotEmpty() && url.isNotEmpty()) {
                     addToBase(name, text, ingredients, url)
-                    val imm =
-                requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(binding.btnAdd.windowToken, 0)
-            
+                    hideKeyboard()
                     Snackbar.make(view, getString(R.string.recipe_is_saved), Snackbar.LENGTH_LONG)
                         .apply { setAnchorView(R.id.bnv_main) }.show()
-
                 } else {
-                    val imm =
-                        requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                    imm.hideSoftInputFromWindow(binding.btnAdd.windowToken, 0)
+                    hideKeyboard()
                     Snackbar.make(view, getString(R.string.need_all_data), Snackbar.LENGTH_LONG)
                         .apply { setAnchorView(R.id.bnv_main) }.show()
                 }
@@ -71,5 +65,11 @@ class AddFragment : Fragment(R.layout.fragment_add) {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun hideKeyboard() {
+        val imm =
+            requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view?.windowToken, 0)
     }
 }
