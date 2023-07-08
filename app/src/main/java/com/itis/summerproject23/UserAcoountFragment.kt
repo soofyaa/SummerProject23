@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import com.itis.summerproject23.database.UsersDatabase
+import kotlinx.coroutines.launch
 
 class UserAcoountFragment : Fragment(R.layout.fragment_user_account) {
 

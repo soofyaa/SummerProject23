@@ -44,7 +44,11 @@
         android:id="@+id/favoriteFragment"
         android:name="com.itis.summerproject23.FavoriteFragment"
         android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_recipePageFragment"
+            app:destination="@id/recipePageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/recipePageFragment"
         android:name="com.itis.summerproject23.RecipePageFragment"
