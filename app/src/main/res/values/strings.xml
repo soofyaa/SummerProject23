@@ -16,7 +16,7 @@
     <string name="recipe_added_to_favorite">Рецепт добавлен в избранное!</string>
     <string name="recipe_removed_from_favorite">Рецепт удален из избранного!</string>
     <string name="recipe_not_found">Такого рецепта нет.</string>
-    <string name="need_all_data">Введите все данные!</string>
+    <string name="need_all_data">Заполните все поля!</string>
     <string name="user_saved">Пользователь сохранен!</string>
     <string name="password">Пароль</string>
     <string name="email">Почта</string>

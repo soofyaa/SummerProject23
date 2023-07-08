@@ -18,24 +18,32 @@ class AddFragment : Fragment(R.layout.fragment_add) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val binding = FragmentAddBinding.bind(view)
 
+        _binding = FragmentAddBinding.bind(view)
         binding.btnAdd.setOnClickListener {
             with(binding) {
-                addToBase(
-                    etName.text.toString(),
-                    etText.text.toString(),
-                    etIngredients.text.toString(),
-                    etURL.text.toString(),
-                )
-            }
+                val name = etName.text.toString()
+                val text = etText.text.toString()
+                val ingredients = etIngredients.text.toString()
+                val url = etURL.text.toString()
 
-            val imm =
+                if (name.isNotEmpty() && text.isNotEmpty() && ingredients.isNotEmpty() && url.isNotEmpty()) {
+                    addToBase(name, text, ingredients, url)
+                    val imm =
                 requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(binding.btnAdd.windowToken, 0)
+            
+                    Snackbar.make(view, getString(R.string.recipe_is_saved), Snackbar.LENGTH_LONG)
+                        .apply { setAnchorView(R.id.bnv_main) }.show()
 
-            Snackbar.make(view, getString(R.string.recipe_is_saved), Snackbar.LENGTH_LONG)
-                .apply { setAnchorView(R.id.bnv_main) }.show()
+                } else {
+                    val imm =
+                        requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                    imm.hideSoftInputFromWindow(binding.btnAdd.windowToken, 0)
+                    Snackbar.make(view, getString(R.string.need_all_data), Snackbar.LENGTH_LONG)
+                        .apply { setAnchorView(R.id.bnv_main) }.show()
+                }
+            }
         }
     }
 
@@ -58,5 +66,10 @@ class AddFragment : Fragment(R.layout.fragment_add) {
                 .build()
                 .recipeDao()
         }?.insertRecipe(newRecipes)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
