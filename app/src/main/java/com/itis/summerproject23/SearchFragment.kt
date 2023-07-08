@@ -14,6 +14,7 @@ import androidx.room.Room
 import com.bumptech.glide.Glide
 import com.itis.summerproject23.database.Recipe
 import com.itis.summerproject23.database.RecipeDatabase
+import java.util.Locale
 
 class SearchFragment : Fragment(R.layout.fragment_search) {
 
@@ -31,8 +32,8 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
         val sharedPrefs = requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val isFirstRun = sharedPrefs.getBoolean(PREF_FIRST_RUN, true)
-        val view = inflater.inflate(R.layout.fragment_search, container, false)
 
+        val view = inflater.inflate(R.layout.fragment_search, container, false)
         searchView = view.findViewById(R.id.sv_recipe)
         recyclerView = view.findViewById(R.id.rv_recipe)
 
@@ -83,7 +84,11 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
                 if (recipesDatabase != null) {
                     for (item in recipesDatabase.recipeDao().getAllRecipes()) {
-                        if (item.name.toLowerCase().contains(text.toString().toLowerCase())) {
+                        if (item.name.lowercase(Locale.getDefault()).contains(
+                                text.toString()
+                                    .lowercase(Locale.getDefault())
+                            )
+                        ) {
 
                             filteredList.add(item)
                         }
@@ -92,7 +97,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
                         Toast.makeText(
                             requireActivity(),
-                            getString(R.string.recipe_not_found),
+                            getString(R.string.nothing_found),
                             Toast.LENGTH_SHORT
                         )
                             .show()
