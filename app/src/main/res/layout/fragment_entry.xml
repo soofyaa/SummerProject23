@@ -34,6 +34,7 @@
             android:background="@drawable/bg_edit_text"
             android:paddingStart="20dp"
             android:hint="@string/username"
+            android:inputType="textCapSentences"
             app:layout_constraintBottom_toTopOf="@id/et_password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
