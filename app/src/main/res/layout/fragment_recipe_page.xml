@@ -80,7 +80,7 @@
 
             <TextView
                 android:id="@+id/tv_title"
-                android:layout_width="388dp"
+                android:layout_width="372dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
@@ -94,7 +94,7 @@
 
             <TextView
                 android:id="@+id/tv_ingredients"
-                android:layout_width="388dp"
+                android:layout_width="372dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
@@ -107,7 +107,7 @@
 
             <TextView
                 android:id="@+id/tv_text"
-                android:layout_width="388dp"
+                android:layout_width="372dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"

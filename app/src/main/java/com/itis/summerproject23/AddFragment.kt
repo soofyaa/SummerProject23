@@ -37,6 +37,10 @@ class AddFragment : Fragment(R.layout.fragment_add) {
                     Snackbar.make(view, getString(R.string.need_all_data), Snackbar.LENGTH_LONG)
                         .apply { setAnchorView(R.id.bnv_main) }.show()
                 }
+                etName.text.clear()
+                etText.text.clear()
+                etIngredients.text.clear()
+                etUrl.text.clear()
             }
         }
     }
