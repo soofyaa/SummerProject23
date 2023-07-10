@@ -30,6 +30,10 @@ class AddFragment : Fragment(R.layout.fragment_add) {
                 if (name.isNotEmpty() && text.isNotEmpty() && ingredients.isNotEmpty() && url.isNotEmpty()) {
                     addToBase(name, text, ingredients, url)
                     hideKeyboard()
+                    etName.text.clear()
+                    etText.text.clear()
+                    etIngredients.text.clear()
+                    etUrl.text.clear()
                     Snackbar.make(view, getString(R.string.recipe_is_saved), Snackbar.LENGTH_LONG)
                         .apply { setAnchorView(R.id.bnv_main) }.show()
                 } else {
@@ -37,10 +41,6 @@ class AddFragment : Fragment(R.layout.fragment_add) {
                     Snackbar.make(view, getString(R.string.need_all_data), Snackbar.LENGTH_LONG)
                         .apply { setAnchorView(R.id.bnv_main) }.show()
                 }
-                etName.text.clear()
-                etText.text.clear()
-                etIngredients.text.clear()
-                etUrl.text.clear()
             }
         }
     }
