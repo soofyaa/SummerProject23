@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph.xml"
-    app:startDestination="@id/profileFragment">
+    app:startDestination="@id/beginFragment">
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.itis.summerproject23.ProfileFragment"
+        android:id="@+id/beginFragment"
+        android:name="com.itis.summerproject23.BeginFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
+        tools:layout="@layout/fragment_begin" >
         <action
-            android:id="@+id/action_profileFragment_to_userAccountFragment"
+            android:id="@+id/action_beginFragment_to_userAccountFragment"
             app:destination="@id/userAccountFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
         <action
-            android:id="@+id/action_profileFragment_to_chooseFragment"
+            android:id="@+id/action_beginFragment_to_chooseFragment"
             app:destination="@id/chooseFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"

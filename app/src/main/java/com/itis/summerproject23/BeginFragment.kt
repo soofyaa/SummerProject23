@@ -5,11 +5,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.itis.summerproject23.databinding.FragmentProfileBinding
+import com.itis.summerproject23.databinding.FragmentBeginBinding
 
-class ProfileFragment : Fragment(R.layout.fragment_profile) {
+class BeginFragment : Fragment(R.layout.fragment_begin) {
 
-    private var binding: FragmentProfileBinding? = null
+    private var binding: FragmentBeginBinding? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -18,20 +18,17 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             requireActivity().getSharedPreferences("my_app", Context.MODE_PRIVATE)
         val isRegistered = sharedPreferences.getBoolean("is_registered", false)
 
-        binding = FragmentProfileBinding.bind(view)
+        binding = FragmentBeginBinding.bind(view)
         binding?.run {
             btnWelcome.setOnClickListener {
 
                 if (isRegistered) {
-                    findNavController().navigate(R.id.action_profileFragment_to_userAccountFragment)
+                    findNavController().navigate(R.id.action_beginFragment_to_userAccountFragment)
                 } else {
-                    findNavController().navigate(R.id.action_profileFragment_to_chooseFragment)
+                    findNavController().navigate(R.id.action_beginFragment_to_chooseFragment)
                 }
             }
-
         }
-
-
     }
 
     override fun onDestroyView() {

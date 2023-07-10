@@ -6,7 +6,6 @@ import android.view.View
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.itis.summerproject23.database.UsersDatabase
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val bottomNav: BottomNavigationView = findViewById(R.id.bnv_main)
 
         controller.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.profileFragment || destination.id == R.id.registrationFragment
+            if (destination.id == R.id.beginFragment || destination.id == R.id.registrationFragment
                 || destination.id == R.id.chooseFragment || destination.id == R.id.entryFragment
                 || destination.id == R.id.recipePageFragment
             ) {
