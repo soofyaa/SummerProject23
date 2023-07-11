@@ -31,7 +31,11 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                     hideKeyboard()
                     Snackbar.make(view, getString(R.string.need_all_data), Snackbar.LENGTH_LONG)
                         .show()
-                } else {
+                } else if (findUserByEmail(email) != null) {
+                    Snackbar.make(view, getString(R.string.email_is_already_taken), Snackbar.LENGTH_LONG)
+                        .show()
+                }
+                else {
                     val preferenceHelper = PreferenceHelper(requireContext())
                     preferenceHelper.setIsLoggedIn(true)
                     preferenceHelper.setUserName(userName)
@@ -48,7 +52,8 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                     editor.apply()
 
                     addToBase(userName, password, email)
-                    findNavController().navigate(R.id.action_registrationFragment_to_userAccountFragment)
+                    findNavController()
+                        .navigate(R.id.action_registrationFragment_to_userAccountFragment)
                 }
             }
         }
@@ -76,6 +81,15 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                 .build()
                 .userDao()
         }?.insertUser(newUser)
+    }
+
+    private fun findUserByEmail(email: String) : User? {
+        return context?.let {
+            Room.databaseBuilder(it, UsersDatabase::class.java, "database-users")
+                .allowMainThreadQueries()
+                .build()
+                .userDao()
+        }?.getUserByEmail(email)
     }
 }
 

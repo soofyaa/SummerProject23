@@ -30,5 +30,6 @@
     <string name="undo">Отмена</string>
     <string name="start">Начать</string>
     <string name="welcome_user">Привет, Пользователь!</string>
+    <string name="email_is_already_taken">Данный email уже занят!</string>
 
 </resources>

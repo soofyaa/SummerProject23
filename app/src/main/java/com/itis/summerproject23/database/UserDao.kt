@@ -21,5 +21,6 @@ interface UserDao {
     @Query("SELECT * FROM users_table WHERE name = :username AND password = :password")
     fun getUserByUsernameAndPassword(username: String, password: String): User?
 
-
+    @Query("SELECT * FROM users_table WHERE email = :email")
+    fun getUserByEmail(email: String): User?
 }
